@@ -1,19 +1,18 @@
+
+
 <h2>Create an Author</h2>
-<%= form_tag authors_path, method: "post" do %>
-  <div class="field">
-    <%= label_tag "name", "Name" %>
-    <%= text_field_tag "name" %>
-  </div>
+<%= form_for @author do |f| %>
+  <%= form_errors_for @author %>
+  
+    <%= f.label :name %>
+    <%= f.input  :name %>
+ 
 
-  <div class="field">
-    <%= label_tag "email", "Email" %>
-    <%= text_field_tag "email" %>
-  </div>
+    <%= f.label :email %> 
+    <%= f.input :email  %>
 
-  <div class="field">
-    <%= label_tag "phone_number", "Phone Number" %>
-    <%= text_field_tag "phone_number" %>
-  </div>
-
-  <%= submit_tag "Create" %>
+    <%= f.label :phone_number %> 
+    <%= f.number_field :phone_number  %>
+ 
+  <%= submit_tag "Create Author" %>
 <% end %>
